@@ -1,0 +1,21 @@
+type project
+owners
+    exira
+authors
+    exira
+projectUrl
+    http://git.exira.com/route-53-updater/
+iconUrl
+    https://raw.githubusercontent.com/exira/route-53-updater/master/docs/files/img/logo.png
+licenseUrl
+    http://github.com/exira/route-53-updater/blob/master/LICENSE.txt
+requireLicenseAcceptance
+    false
+copyright
+    Copyright 2015
+tags
+    aws ec2 route53 f#
+summary
+    Exira.Route53Updater is a Windows service which updates a Route 53 record with the current EC2 hostname
+description
+    Exira.Route53Updater is a Windows service which updates a Route 53 record with the current EC2 hostname
