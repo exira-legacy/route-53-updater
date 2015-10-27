@@ -8,7 +8,7 @@
     <ProjectGuid>055cdb79-701c-487e-b036-e80e1b7f88ec</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>route_53_updater</RootNamespace>
-    <AssemblyName>route_53_updater</AssemblyName>
+    <AssemblyName>route-53-updater</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Name>route-53-updater</Name>
@@ -23,7 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Debug\route_53_updater.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\route-53-updater.xml</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -34,7 +34,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Release\route_53_updater.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\route-53-updater.xml</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
@@ -44,9 +44,12 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.fs" />
     <None Include="App.config" />
     <None Include="paket.references" />
+    <None Include="Updater.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Compile Include="Program.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
@@ -206,6 +209,17 @@
       <ItemGroup>
         <Reference Include="AWSSDK.Route53">
           <HintPath>..\packages\AWSSDK.Route53\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10\AWSSDK.Route53.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6'">
+      <ItemGroup>
+        <Reference Include="Exira.ErrorHandling">
+          <HintPath>..\packages\Exira.ErrorHandling\lib\net46\Exira.ErrorHandling.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>

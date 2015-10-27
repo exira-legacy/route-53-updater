@@ -2,3 +2,4 @@
 FSharp.Configuration
 AWSSDK.EC2
 AWSSDK.Route53
+Exira.ErrorHandling
