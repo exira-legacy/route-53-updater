@@ -1,4 +1,6 @@
 type project
+id
+    Exira.Route53Updater
 owners
     exira
 authors
