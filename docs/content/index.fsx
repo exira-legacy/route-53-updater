@@ -11,7 +11,7 @@ route-53-updater [![NuGet Status](http://img.shields.io/nuget/v/Exira.Route53Upd
   <div class="span1"></div>
   <div class="span6">
     <div class="well well-small" id="nuget">
-      The route-53-updater library can be <a href="https://nuget.org/packages/Exira.EventStore.Owin">installed from NuGet</a>:
+      The route-53-updater library can be <a href="https://nuget.org/packages/Exira.Route53Updater">installed from NuGet</a>:
       <pre>PM> Install-Package Exira.Route53Updater</pre>
     </div>
   </div>
