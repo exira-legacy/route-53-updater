@@ -1,2 +1,7 @@
 ﻿Updater:
     Debug: true
+    AwsAccessKey: YOUR AWS ACCESS KEY
+    AwsSecretKey: YOUR AWS SECRET KEY
+    Region: YOUR AWS REGION
+    ZoneId: YOUR ZONE ID
+    DomainName: YOUR DOMAIN
