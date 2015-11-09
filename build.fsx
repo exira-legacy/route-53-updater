@@ -29,11 +29,11 @@ let project = "Exira.Route53Updater"
 
 // Short summary of the project
 // (used as description in AssemblyInfo and as a short summary for NuGet package)
-let summary = "Exira.Route53Updater is a Windows service which updates a Route 53 record with the current EC2 hostname"
+let summary = "Exira.Route53Updater is a console application which updates a Route 53 record with the current EC2 hostname"
 
 // Longer description of the project
 // (used as a description for NuGet package; line breaks are automatically cleaned up)
-let description = "Exira.Route53Updater is a Windows service which updates a Route 53 record with the current EC2 hostname"
+let description = "Exira.Route53Updater is a console application which updates a Route 53 record with the current EC2 hostname"
 
 // List of author names (for NuGet package)
 let authors = [ "exira" ]

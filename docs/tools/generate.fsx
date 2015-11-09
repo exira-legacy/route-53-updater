@@ -19,7 +19,7 @@ let githubLink = "http://github.com/exira/route-53-updater"
 let info =
   [ "project-name", "route-53-updater"
     "project-author", "exira"
-    "project-summary", "Exira.Route53Updater is a Windows service which updates a Route 53 record with the current EC2 hostname"
+    "project-summary", "Exira.Route53Updater is a console application which updates a Route 53 record with the current EC2 hostname"
     "project-github", githubLink
     "project-nuget", "http://nuget.org/packages/Exira.Route53Updater" ]
 

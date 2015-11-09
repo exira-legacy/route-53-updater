@@ -18,6 +18,6 @@ copyright
 tags
     aws ec2 route53 f#
 summary
-    Exira.Route53Updater is a Windows service which updates a Route 53 record with the current EC2 hostname
+    Exira.Route53Updater is a console application which updates a Route 53 record with the current EC2 hostname
 description
-    Exira.Route53Updater is a Windows service which updates a Route 53 record with the current EC2 hostname
+    Exira.Route53Updater is a console application which updates a Route 53 record with the current EC2 hostname
