@@ -4,7 +4,7 @@
 
 Exira.Route53Updater is a console application which updates a Route 53 record with the current EC2 hostname.
 
-# Usage
+### Usage
 
  * Edit ```Updater.yaml``` using:
    * AwsAccessKey: ```YOUR AWS ACCESS KEY```, e.g.: ```AXIURT98PXVXJU7K...```
