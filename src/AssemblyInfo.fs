@@ -4,10 +4,10 @@ open System.Reflection
 [<assembly: AssemblyTitleAttribute("route-53-updater")>]
 [<assembly: AssemblyProductAttribute("Exira.Route53Updater")>]
 [<assembly: AssemblyDescriptionAttribute("Exira.Route53Updater is a console application which updates a Route 53 record with the current EC2 hostname")>]
-[<assembly: AssemblyVersionAttribute("0.1.8")>]
-[<assembly: AssemblyFileVersionAttribute("0.1.8")>]
-[<assembly: AssemblyMetadataAttribute("githash","9b1a1e9212bc54d8b3634915b2b3eda68d97014e")>]
+[<assembly: AssemblyVersionAttribute("1.0.9")>]
+[<assembly: AssemblyFileVersionAttribute("1.0.9")>]
+[<assembly: AssemblyMetadataAttribute("githash","08ecca4664295f289a303d90b7992b9b0678df73")>]
 do ()
 
 module internal AssemblyVersionInformation =
-    let [<Literal>] Version = "0.1.8"
+    let [<Literal>] Version = "1.0.9"
