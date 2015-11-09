@@ -15,6 +15,10 @@ Exira.Route53Updater is a console application which updates a Route 53 record wi
 
  * Run ```route-53-updater.exe```
 
+### Tips
+
+  * Set your TTL of your CNAME record low enough if you want to do something like this.
+
 ## Cloning
 
 ```git clone git@github.com:exira/route-53-updater.git -c core.autocrlf=input```
