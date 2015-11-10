@@ -603,13 +603,13 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="paket.references" />
+    <Content Include="exira.ico" />
+    <None Include="icon.rc" />
+    <None Include="icon.res" />
     <None Include="Updater.yaml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Compile Include="Program.fs" />
-    <Content Include="exira.ico" />
-    <None Include="icon.rc" />
-    <None Include="icon.res" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />

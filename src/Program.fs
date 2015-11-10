@@ -1,15 +1,20 @@
 ﻿open FSharp.Configuration
-open Amazon.EC2.Util
-open Exira.ErrorHandling
 open System
+open System.Reflection
+open System.IO
+open Amazon.EC2.Util
 open Amazon.Route53
 open Amazon.Route53.Model
 open Amazon
 open Amazon.Runtime
+open Exira.ErrorHandling
+
+let executablePath = Assembly.GetEntryAssembly().Location |> Path.GetDirectoryName
+let configPath = Path.Combine(executablePath, "Updater.yaml")
 
 type UpdaterConfig = YamlConfig<"Updater.yaml">
 let updaterConfig = UpdaterConfig()
-updaterConfig.Load "Updater.yaml"
+updaterConfig.Load configPath
 
 type Errors =
     | FailedToRetrieveEc2MetaData of exn
