@@ -21,3 +21,8 @@ summary
     Exira.Route53Updater is a console application which updates a Route 53 record with the current EC2 hostname
 description
     Exira.Route53Updater is a console application which updates a Route 53 record with the current EC2 hostname
+files
+    bin/Release/*.exe ==> tools
+    bin/Release/*.dll ==> tools
+    bin/Release/*.config ==> tools
+    bin/Release/Updater.yaml ==> tools
