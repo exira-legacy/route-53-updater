@@ -26,3 +26,11 @@ Exira.Route53Updater is a console application which updates a Route 53 record wi
 ## Cloning
 
 ```git clone git@github.com:exira/route-53-updater.git -c core.autocrlf=input```
+
+## Copyright
+
+Copyright © 2015 Cumps Consulting BVBA / Exira and contributors.
+
+## License
+
+route-53-updater is licensed under [BSD (3-Clause)](http://choosealicense.com/licenses/bsd-3-clause/ "Read more about the BSD (3-Clause) License"). Refer to [LICENSE.txt](https://github.com/exira/route-53-updater/blob/master/LICENSE.txt) for more information.
