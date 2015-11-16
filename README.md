@@ -6,18 +6,22 @@ Exira.Route53Updater is a console application which updates a Route 53 record wi
 
 ### Usage
 
- * Edit ```Updater.yaml``` using:
-   * AwsAccessKey: ```YOUR AWS ACCESS KEY```, e.g.: ```AXIURT98PXVXJU7K...```
-   * AwsSecretKey: ```YOUR AWS SECRET KEY```, e.g.: ```1Y9poTREdb/8j1234Tr...```
-   * Region: ```YOUR AWS REGION```, e.g.: ```eu-central-1```
-   * ZoneId: ```YOUR ZONE ID```, e.g.: ```ZRTPOCDERLDCO```
-   * DomainName: ```YOUR DOMAIN```, e.g.: ```www.example.org.```
+* Create a `Hosted Zone` in `Route 53` and write down the `Hosted Zone ID`
+* Create a `Record Set` of type `CNAME` with for example `www` as name and a `TTL` of `60`
 
- * Run ```route-53-updater.exe```
+* Download the latest release from [the GitHub releases page](https://github.com/exira/route-53-updater/releases)
+* Unzip on your `EC2 Instance`
 
-### Tips
+* Edit `Updater.yaml` using:
+  * AwsAccessKey: `YOUR AWS ACCESS KEY`, e.g.: `AXIURT98PXVXJU7K...`
+  * AwsSecretKey: `YOUR AWS SECRET KEY`, e.g.: `1Y9poTREdb/8j1234Tr...`
+  * Region: ```YOUR AWS REGION```, e.g.: ```eu-central-1`
+  * ZoneId: `YOUR ZONE ID`, e.g.: `ZRTPOCDERLDCO`
+  * DomainName: `YOUR DOMAIN`, e.g.: `www.example.org.` (Pay attention to the trailing .)
 
-  * Set the ```TTL``` of your ```CNAME``` record low enough if you want to do something like this.
+* Run `route-53-updater.exe`
+
+* Your Route 53 record should now be updated with the public hostname of your EC2 instance
 
 ## Cloning
 
