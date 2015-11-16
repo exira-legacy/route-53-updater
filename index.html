@@ -35,18 +35,32 @@
           
 <h1><a name="route-53-updater" class="anchor" href="#route-53-updater">route-53-updater <a href="https://www.nuget.org/packages/Exira.Route53Updater/"><img src="http://img.shields.io/nuget/v/Exira.Route53Updater.svg?style=flat" alt="NuGet Status" /></a></a></h1>
 
-<div class="row">
-  <div class="span1"></div>
-  <div class="span6">
-    <div class="well well-small" id="nuget">
-      The route-53-updater library can be <a href="https://nuget.org/packages/Exira.Route53Updater">installed from NuGet</a>:
-      <pre>PM> Install-Package Exira.Route53Updater</pre>
-    </div>
-  </div>
-  <div class="span1"></div>
-</div>
+<p>Exira.Route53Updater is a console application which updates a Route 53 record with the current EC2 hostname.</p>
 
-<h2><a name="Contributing-and-copyright" class="anchor" href="#Contributing-and-copyright">Contributing and copyright</a></h2>
+<h3><a name="Usage" class="anchor" href="#Usage">Usage</a></h3>
+
+<ul>
+<li>Create a <code>Hosted Zone</code> in <code>Route 53</code> and write down the <code>Hosted Zone ID</code></li>
+<li><p>Create a <code>Record Set</code> of type <code>CNAME</code> with for example <code>www</code> as name and a <code>TTL</code> of <code>60</code></p></li>
+<li>Download the latest release from <a href="https://github.com/exira/route-53-updater/releases">the GitHub releases page</a></li>
+<li><p>Unzip on your <code>EC2 Instance</code></p></li>
+<li>Edit <code>Updater.yaml</code> using:
+<ul>
+<li>AwsAccessKey: <code>YOUR AWS ACCESS KEY</code>, e.g.: <code>AXIURT98PXVXJU7K...</code></li>
+<li>AwsSecretKey: <code>YOUR AWS SECRET KEY</code>, e.g.: <code>1Y9poTREdb/8j1234Tr...</code></li>
+<li>Region: <code>`YOUR AWS REGION</code><code>, e.g.:</code><code></code>eu-central-1`</li>
+<li>ZoneId: <code>YOUR ZONE ID</code>, e.g.: <code>ZRTPOCDERLDCO</code></li>
+<li><p>DomainName: <code>YOUR DOMAIN</code>, e.g.: <code>www.example.org.</code> (Pay attention to the trailing .)</p></li>
+</ul></li>
+<li><p>Run <code>route-53-updater.exe</code></p></li>
+<li><p>Your Route 53 record should now be updated with the public hostname of your EC2 instance</p></li>
+</ul>
+
+<h3><a name="Cloning" class="anchor" href="#Cloning">Cloning</a></h3>
+
+<p><code>git clone git@github.com:exira/route-53-updater.git -c core.autocrlf=input</code></p>
+
+<h3><a name="Contributing-and-copyright" class="anchor" href="#Contributing-and-copyright">Contributing and copyright</a></h3>
 
 <p>The project is hosted on <a href="https://github.com/exira/route-53-updater">GitHub</a> where you can <a href="https://github.com/exira/route-53-updater/issues">report issues</a>, fork
 the project and submit pull requests. You might also want to read the
@@ -62,7 +76,7 @@ the project and submit pull requests. You might also want to read the
             <li class="nav-header">route-53-updater</li>
             <li><a href="/route-53-updater/index.html">Home page</a></li>
             <li class="divider"></li>
-            <li><a href="http://nuget.org/packages/Exira.Route53Updater">Get Library via NuGet</a></li>
+            <li><a href="https://github.com/exira/route-53-updater/releases">Get Application on GitHub</a></li>
             <li><a href="http://github.com/exira/route-53-updater">Source Code on GitHub</a></li>
             <li><a href="/route-53-updater/license.html">License</a></li>
             <li><a href="/route-53-updater/release-notes.html">Release Notes</a></li>
