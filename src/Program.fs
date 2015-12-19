@@ -2,11 +2,10 @@
 open System
 open System.Reflection
 open System.IO
+open Amazon
 open Amazon.EC2.Util
 open Amazon.Route53
 open Amazon.Route53.Model
-open Amazon
-open Amazon.Runtime
 open Exira.ErrorHandling
 
 let executablePath = Assembly.GetEntryAssembly().Location |> Path.GetDirectoryName
@@ -51,7 +50,6 @@ let printNetworkInterfaces nics =
 
     if updaterConfig.Updater.Debug then nics |> Seq.iter printDebug
     else ()
-    nics
 
 let getNetworkInterface nics =
     let nic =
@@ -101,7 +99,6 @@ let printResourceRecordSet resourceRecordSet =
 
     if updaterConfig.Updater.Debug then resourceRecordSet |> printDebug
     else ()
-    resourceRecordSet
 
 let compareNicWithResourceRecordSet (nic: NetworkInterface) (resourceRecordSet: ResourceRecordSet) =
     let resourceRecord =
@@ -134,26 +131,26 @@ let updateResourceRecordSet (resourceRecordSet: ResourceRecordSet) =
     | ex -> fail [FailedToUpdateRoute53Zone ex]
 
 [<EntryPoint>]
-let main argv =
+let main _ =
     let determineNic() =
         getNetworkInterfaces
-        |> map printNetworkInterfaces
+        |> map (printNetworkInterfaces |> tee)
         |> bind getNetworkInterface
 
     let determineResourceRecordSet() =
         getRoute53ResourceRecordSet
-        |> map printResourceRecordSet
+        |> map (printResourceRecordSet |> tee)
 
     let determineNewResourceRecordSet =
         match determineNic(), determineResourceRecordSet() with
         | Success nic, Success resourceRecordSet -> compareNicWithResourceRecordSet nic resourceRecordSet
-        | Failure a', Success b' -> fail a'
-        | Success a', Failure b' -> fail b'
+        | Failure a', Success _ -> fail a'
+        | Success _ , Failure b' -> fail b'
         | Failure a', Failure b' -> fail (a' @ b')
 
     let route53Updater =
         determineNewResourceRecordSet
-        |> map printResourceRecordSet
+        |> map (printResourceRecordSet |> tee)
         |> bind updateResourceRecordSet
 
     match route53Updater with
