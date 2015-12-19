@@ -4,7 +4,7 @@
 
 Exira.Route53Updater is a console application which updates a Route 53 record with the current EC2 hostname.
 
-### Usage
+## Usage
 
 * Create a `Hosted Zone` in `Route 53` and write down the `Hosted Zone ID`
 * Create a `Record Set` of type `CNAME` with for example `www` as name and a `TTL` of `60`
