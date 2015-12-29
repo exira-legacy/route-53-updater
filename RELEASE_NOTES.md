@@ -1,3 +1,6 @@
+#### 1.2 - December 29 2015
+* Target .NET 4.6.1
+
 #### 1.1 - November 10 2015
 * Fix Updater.yaml localisation issue
 
